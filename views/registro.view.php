@@ -16,6 +16,21 @@
     <div class="container">
       <div class="row">
         <div class="mx-auto col-lg-6 col-10">
+
+        <?php 
+        if(isset($errores)){
+          if(count($errores)>0){
+            print  '<div class="alert alert-danger">';
+            foreach($errores as $error =>$valor){
+              print "<strong> $valor </strong>";
+            }
+          }
+          print '</div>';
+             
+        }
+        ?>
+         
+            
           <h1>Registrate</h1>
           <form class="text-left" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <div class="form-group"> <label for="nombre">Nombre</label> <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre"> </div>
